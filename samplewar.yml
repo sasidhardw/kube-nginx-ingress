@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+    name: samplewar
+spec:
+    selector:
+        matchLabels:
+          app: samplewar
+    replicas: 2 
+    template:
+        metadata:
+        
+          labels:
+            app: samplewar
+        spec:
+          containers:
+          - name: samplewar
+            image: sasidhardw/samplewar
+            ports:
+            - containerPort: 8080
+
